@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tercanli Family</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --nord0: #2e3440; /* Polar Night */
+        --nord1: #3b4252;
+        --nord4: #d8dee9; /* Snow Storm */
+        --nord8: #88c0d0; /* Frost Blue */
+        --nord10: #5e81ac; /* Arctic Blue */
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--nord0);
+        color: var(--nord4);
+        display: flex;
+        height: 100vh;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .container {
+        max-width: 800px;
+        padding: 20px;
+      }
+
+      h1 {
+        font-weight: 300;
+        letter-spacing: 8px;
+        margin-bottom: 0.5rem;
+        color: white;
+      }
+      .welcome-text {
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--nord8);
+      }
+      .instruction-text {
+        font-weight: 300;
+        opacity: 0.8;
+        margin-bottom: 3.5rem;
+        letter-spacing: 1px;
+      }
+
+      .links {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        text-decoration: none;
+        color: var(--nord4);
+        padding: 40px 30px;
+        border: 1px solid var(--nord1);
+        border-radius: 20px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        width: 180px;
+        background: rgba(255, 255, 255, 0.02);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Image Placeholder Styling */
+      .avatar-img {
+        width: 100px;
+        height: 100px;
+        background-color: var(--nord1);
+        border-radius: 50%;
+        margin-bottom: 25px;
+        object-fit: cover;
+        border: 2px solid transparent;
+        transition: all 0.4s ease;
+      }
+
+      .card span {
+        display: block;
+        font-weight: 600;
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      /* Hover States */
+      .card:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: var(--nord8);
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .card:hover .avatar-img {
+        border-color: var(--nord8);
+        transform: scale(1.05);
+        background-color: var(--nord10);
+      }
+
+      .card:hover span {
+        color: white;
+      }
+
+      @media (max-width: 500px) {
+        .links {
+          flex-direction: column;
+          align-items: center;
+        }
+        .card {
+          width: 75%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="welcome-text">Welcome</div>
+      <div class="instruction-text">Select a profile to visit</div>
+
+      <div class="links">
+        <a href="https://olcay.tercanli.com" class="card">
+          <img src="assets/img/olcay.png" alt="M. Olcay TERCANLI" class="avatar-img" />
+          <span>Olcay TERCANLI</span>
+        </a>
+
+        <a href="https://www.cilgaiscan.com" class="card">
+          <img src="assets/img/cilga.jpg" alt="Cilga ISCAN TERCANLI" class="avatar-img" />
+          <span>Cilga ISCAN TERCANLI</span>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
