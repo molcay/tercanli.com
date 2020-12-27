@@ -11,7 +11,18 @@
     a.bg-olcay {
       background-color: #456789;
     }
+
+    .b--olcay {
+      border-color: #234567;
+    }
+ 
+    #social-links > a {
+        text-decoration: none;
+        font-size: 2rem;
+        margin: 0rem .25rem;
+    }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-33H13J4HW5"></script>
   <script>
@@ -24,24 +35,154 @@
 </head>
 
 <body>
-  <div class="bg-olcay washed-blue flex justify-center h-100 avenir">
-    <article class="vh-100 dt w-100">
-      <div class="dtc v-mid tc ph3 ph4-l">
-        <h1 class="f1-l fw5">M. Olcay TERCANLI</h1>
-        <div class="fw2">I'm a software engineer based on Urla, İzmir, Turkey.</div>
-        <div class="mt4 pa4 b--blue">
-          <a class="no-underline washed-blue bg-animate bg-olcay hover-bg-gray inline-flex items-center ma2 tc br3 pa3"
-            href="https://presentations.tercanli.com" title="Presentations" target="_blank">
-            <span class="f5 ml1 mr1 pl2 pr2">Presentations</span>
-          </a>
-          <a class="no-underline washed-blue bg-animate bg-olcay hover-bg-gray inline-flex items-center ma2 tc br3 pa3"
-            href="https://blog.tercanli.com" title="Blog" target="_blank">
-            <span class="f5 ml1 mr1 pl2 pr2">Blog</span>
-          </a>
-        </div>
+  <article class="avenir">
+    <div class="fl w-20 bg-olcay tc flex flex-horizontal fixed br bw1 b--olcay">
+      <div class="washed-blue h-100 w-100">
+        <article class="vh-100 flex flex-column justify-around items-center">
+          <div class="bb bw1 b--olcay">
+            <div class="pa4 tc">
+              <img src="assets/images/profile-picture.jpeg" alt="Muhammed Olcay TERCANLI" class="br-100 h3 w3 dib">
+            </div>
+            <h1 class="f3-l fw5">M. Olcay TERCANLI</h1>
+          </div>
+          <nav class="flex flex-column justify-center items-center">
+            <a href="#home" class="no-underline washed-blue hover-blue ma1 tc pa1"> Home </a>
+            <a href="#about" class="no-underline washed-blue hover-blue ma2 tc pa2"> About Me </a>
+            <a href="#projects" class="no-underline washed-blue hover-blue ma2 tc pa2"> Projects </a>
+            <a href="#contact" class="no-underline washed-blue hover-blue ma2 tc pa2"> Contact Me </a>
+          </nav>
+          <footer class="bt bw1 b--olcay">
+            <div id="social-links-footer" class="mt1 pa2 b--blue f-7">
+            </div>
+          </footer>
+        </article>
       </div>
-    </article>
-  </div>
+    </div>
+    <div class="fr w-80 bg-olcay tc">
+      <div id="home" class="bg-olcay washed-blue flex justify-center h-100 bb bw1 b--olcay">
+        <article class="vh-100 dt w-100">
+          <div class="dtc v-mid tc ph3 ph4-l">
+            <div class="pa4 tc">
+              <img src="assets/images/profile-picture.jpeg" alt="Muhammed Olcay TERCANLI" class="br-100 h4 w4 dib">
+            </div>
+            <h1 class="f1-l fw5">Muhammed Olcay TERCANLI</h1>
+            <div class="fw2">I'm a software engineer based on Urla, İzmir, Turkey.</div>
+            <div id="social-links" class="mt4 pa4 b--blue">
+            </div>
+            <div class=" b--blue">
+              <a class="no-underline washed-blue bg-animate bg-olcay hover-bg-gray inline-flex items-center ma2 tc br3 pa3"
+                href="TERCANLI_MuhammedOlcay_Resume.pdf" title="Resume" target="_blank">
+                <span class="f5 ml1 mr1 pl2 pr2"><i class="fas fa-download"></i> Resume</span>
+              </a>
+              <a class="no-underline washed-blue bg-animate bg-olcay hover-bg-gray inline-flex items-center ma2 tc br3 pa3"
+                href="https://presentations.tercanli.com" title="Presentations" target="_blank">
+                <span class="f5 ml1 mr1 pl2 pr2"><i class="fas fa-compress"></i> Presentations</span>
+              </a>
+              <a class="no-underline washed-blue bg-animate bg-olcay hover-bg-gray inline-flex items-center ma2 tc br3 pa3"
+                href="https://blog.tercanli.com" title="Blog" target="_blank">
+                <span class="f5 ml1 mr1 pl2 pr2"><i class="fas fa-blog"></i> Blog</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div id="about" class="bg-olcay washed-blue flex justify-center h-100 bb bw1 b--olcay">
+        <article class="vh-100 dt w-100"> 
+          <div class="dtc v-mid tc ph3 ph4-l">
+            <h1 class="f2-l fw5">About Me</h1>
+          </div>
+        </article>
+      </div>
+      <div id="projects" class="bg-olcay washed-blue flex justify-center h-100 bb bw1 b--olcay">
+        <article class="vh-100 dt w-100"> 
+          <div class="dtc v-mid tc ph3 ph4-l">
+            <h1 class="f2-l fw5">Projects</h1>
+          </div>
+        </article>
+      </div>
+      <div id="contact" class="bg-olcay washed-blue flex justify-center h-100">
+        <article class="vh-100 dt w-100"> 
+          <div class="dtc v-mid tc ph3 ph4-l">
+            <h1 class="f2-l fw5">Contact</h1>
+            <div id="social-links-contact-me" class="mt4 pa4 b--blue">
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </article>
+  
+  <script>
+    class Social {
+      constructor(name, url, icon) {
+        this.name = name;
+        this.url = url;
+        this.icon = icon;
+      }
+
+      static fromJSON(data) {
+        return new Social(data.name, data.url, data.icon);
+      }
+
+      toTag() {
+        const a = document.createElement('a');
+        a.setAttribute('href', this.url);
+        a.setAttribute('title', this.name);
+        a.setAttribute('class', 'no-underline washed-blue hover-bg-gray inline-flex items-center ma1 tc br3 pa2');
+        a.setAttribute('target', '_blank');
+
+        const icon = document.createElement('i');
+        icon.setAttribute('class', this.icon);
+
+        a.appendChild(icon);
+
+        return a;
+      }
+    }
+
+    const data = {
+      socialLinks: [
+        {
+          name: 'email',
+          url: 'mailto:molcaytercanli@gmail.com',
+          icon: 'far fa-envelope-open',
+        },
+        {
+          name: 'phone',
+          url: 'tel:+905393405527',
+          icon: 'fas fa-mobile-alt',
+        },
+        {
+          name: 'LinkedIn',
+          url: 'https://www.linkedin.com/in/muhammed-olcay-tercanli',
+          icon: 'fab fa-linkedin',
+        },
+        {
+          name: 'GitHub',
+          url: 'https://github.com/molcay',
+          icon: 'fab fa-github',
+        },
+        {
+          name: 'GitLab',
+          url: 'https://gitlab.com/molcay',
+          icon: 'fab fa-gitlab',
+        },
+        {
+          name: 'Twitter',
+          url: 'https://twitter.com/molcay',
+          icon: 'fab fa-twitter-square',
+        },
+      ],
+    };
+    
+    data.socialLinks
+    .map((social) => Social.fromJSON(social))
+    .forEach(social => {
+      document.getElementById('social-links').append(social.toTag());
+      document.getElementById('social-links-footer').append(social.toTag());
+      document.getElementById('social-links-contact-me').append(social.toTag());
+    });
+  </script>
 </body>
 
 </html>
