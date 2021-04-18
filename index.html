@@ -21,6 +21,10 @@
         font-size: 2rem;
         margin: 0rem .25rem;
     }
+    .striped--near-white:nth-child(2n) > td {
+      background-color: #e4e4e4;
+
+    }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -90,6 +94,7 @@
         <article class="vh-100 dt w-100"> 
           <div class="dtc v-mid tc ph3 ph4-l">
             <h1 class="f2-l fw5">About Me</h1>
+            <p class="f4-l fw4">Currently, Software Engineer at start-up company named Urla Digital Agriculture. <b>3+ years</b> experience specialising in the <b>full stack development</b>, <b>automation</b> and <b>control</b> of computational units. A being who loves *nix based environments and enjoys to customise all of the development environment. Interested in devising a better <b>problem-solving methods</b> for challenging tasks, and <b>learning new technologies</b> and <b>tools</b> for fun.</p>
           </div>
         </article>
       </div>
@@ -97,6 +102,17 @@
         <article class="vh-100 dt w-100"> 
           <div class="dtc v-mid tc ph3 ph4-l">
             <h1 class="f2-l fw5">Projects</h1>
+            <div class="flex justify-center pt5">
+              <table class="collapse ba br2 b--black-10">
+                <tbody id="project-table-body">
+                  <tr class="striped--near-white">
+                    <th class="pv2 ph3 tl f6 fw6 ttu">Project Name</th>
+                    <th class="pv2 ph3 tl f6 fw6 ttu">Description</th>
+                    <th class="pv2 ph3 tl f6 fw6 ttu">Source Code</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </article>
       </div>
@@ -140,6 +156,52 @@
       }
     }
 
+    class Project {
+      constructor(name, description, url, icon) {
+        this.name = name;
+        this.description = description;
+        this.url = url;
+        this.icon = icon;
+      }
+
+      static fromJSON(data) {
+        return new Project(data.name, data.description, data.url, data.icon);
+      }
+
+      toTag() {
+        const tr = document.createElement('tr');
+        tr.setAttribute('class', 'striped--near-white');
+        
+        const td_name = document.createElement('td');
+        td_name.appendChild(document.createTextNode(this.name));
+        td_name.setAttribute('class', 'pv2 ph3');
+
+        const td_description = document.createElement('td');
+        td_description.appendChild(document.createTextNode(this.description));
+        td_description.setAttribute('class', 'pv2 ph3');
+        
+        const td_link = document.createElement('td');
+        td_link.setAttribute('class', 'pv2 ph3 tc');
+        const a = document.createElement('a');
+        a.setAttribute('href', this.url);
+        a.setAttribute('title', this.name);
+        a.setAttribute('class', 'no-underline washed-blue bg-blue hover-bg-gray inline-flex items-center ma1 tc br3 pa2');
+        a.setAttribute('target', '_blank');
+        
+        const icon = document.createElement('i');
+        icon.setAttribute('class', this.icon);
+
+        a.appendChild(icon);
+        td_link.appendChild(a);
+
+        tr.appendChild(td_name);
+        tr.appendChild(td_description);
+        tr.appendChild(td_link);
+
+        return tr;
+      }
+    }
+
     const data = {
       socialLinks: [
         {
@@ -173,6 +235,32 @@
           icon: 'fab fa-twitter-square',
         },
       ],
+      projects: [
+        {
+          name: 'pyctx',
+          description: 'Context package to pass data between function calls, use timers and log it.',
+          url: 'https://github.com/molcay/pyctx',
+          icon: 'fab fa-github',
+        },
+        {
+          name: 'django-pyctx',
+          description: 'A django package to wrap pyctx and supply a middleware to trace and log incoming request and its flow.',
+          url: 'https://github.com/molcay/django-pyctx',
+          icon: 'fab fa-github',
+        },
+        {
+          name: 'menusiparis.com',
+          description: 'A Website to get order from user with QR codes for restaurant, cafe.',
+          url: 'https://www.menusiparis.com',
+          icon: 'fas fa-external-link-alt',
+        },
+        {
+          name: 'eczasis.com',
+          description: 'A Web application to manage pharmacy stocks.',
+          url: 'https://www.eczasis.com',
+          icon: 'fas fa-external-link-alt',
+        }
+      ]
     };
     
     data.socialLinks
@@ -182,6 +270,12 @@
       document.getElementById('social-links-footer').append(social.toTag());
       document.getElementById('social-links-contact-me').append(social.toTag());
     });
+
+    data.projects.map((project) => Project.fromJSON(project)).forEach((project) => {
+      document.getElementById('project-table-body').append(project.toTag());
+    })
+
+
   </script>
 </body>
 
