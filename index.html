@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Personal Webpage | M. Olcay TERCANLI</title>
+  <title>Personal Webpage | Olcay TERCANLI</title>
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
   <style>
     .bg-olcay {
@@ -45,7 +45,7 @@
         <article class="vh-100 flex flex-column justify-around items-center">
           <div class="bb bw1 b--olcay">
             <div class="pa4 tc">
-              <img src="assets/images/profile-picture.jpeg" alt="Muhammed Olcay TERCANLI" class="br-100 h3 w3 dib">
+              <img src="assets/images/profile-picture.jpeg" alt="Olcay TERCANLI" class="br-100 h3 w3 dib">
             </div>
             <h1 class="f3-l fw5">Olcay TERCANLI</h1>
           </div>
@@ -67,7 +67,7 @@
         <article class="vh-100 dt w-100">
           <div class="dtc v-mid tc ph3 ph4-l">
             <div class="pa4 tc">
-              <img src="assets/images/profile-picture.jpeg" alt="Muhammed Olcay TERCANLI" class="br-100 h4 w4 dib">
+              <img src="assets/images/profile-picture.jpeg" alt="Olcay TERCANLI" class="br-100 h4 w4 dib">
             </div>
             <h1 class="f1-l fw5">Olcay TERCANLI</h1>
             <div class="fw2">I'm a software engineer based on Urla, İzmir, Turkey.</div>
@@ -75,7 +75,7 @@
             </div>
             <div class=" b--blue">
               <a class="no-underline washed-blue bg-animate bg-olcay hover-bg-gray inline-flex items-center ma2 tc br3 pa3"
-                href="TERCANLI_MuhammedOlcay_Resume.pdf" title="Resume" target="_blank">
+                href="OlcayTercanli_Resume.pdf" title="Resume" target="_blank">
                 <span class="f5 ml1 mr1 pl2 pr2"><i class="fas fa-download"></i> Resume</span>
               </a>
               <a class="no-underline washed-blue bg-animate bg-olcay hover-bg-gray inline-flex items-center ma2 tc br3 pa3"
@@ -216,7 +216,7 @@
         },
         {
           name: 'LinkedIn',
-          url: 'https://www.linkedin.com/in/muhammed-olcay-tercanli',
+          url: 'https://www.linkedin.com/in/molcay',
           icon: 'fab fa-linkedin',
         },
         {
@@ -228,11 +228,6 @@
           name: 'GitLab',
           url: 'https://gitlab.com/molcay',
           icon: 'fab fa-gitlab',
-        },
-        {
-          name: 'Twitter',
-          url: 'https://twitter.com/molcay',
-          icon: 'fab fa-twitter-square',
         },
       ],
       projects: [
@@ -264,16 +259,18 @@
     };
     
     data.socialLinks
-    .map((social) => Social.fromJSON(social))
-    .forEach(social => {
-      document.getElementById('social-links').append(social.toTag());
-      document.getElementById('social-links-footer').append(social.toTag());
-      document.getElementById('social-links-contact-me').append(social.toTag());
-    });
+      .map((social) => Social.fromJSON(social))
+      .forEach((social) => {
+        document.getElementById('social-links').append(social.toTag());
+        document.getElementById('social-links-footer').append(social.toTag());
+        document.getElementById('social-links-contact-me').append(social.toTag());
+      });
 
-    data.projects.map((project) => Project.fromJSON(project)).forEach((project) => {
-      document.getElementById('project-table-body').append(project.toTag());
-    })
+    data.projects
+      .map((project) => Project.fromJSON(project))
+      .forEach((project) => {
+        document.getElementById('project-table-body').append(project.toTag());
+      });
 
 
   </script>
